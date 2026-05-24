@@ -1,7 +1,7 @@
 name: repeater
 description: "An app to assist hafiz Quran in scheduling timetables."
 publish_to: 'none'
-version: 0.2.2-beta
+version: 0.2.3-beta
 
 environment:
   sdk: ^3.5.1

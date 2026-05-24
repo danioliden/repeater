@@ -47,7 +47,7 @@ class ScheduleListTile extends StatelessWidget {
           MaterialPageRoute(
             builder: (context) => ScheduleDetailsScreen(
               scheduleEntry: scheduleEntry,
-              editable: false,
+              editable: editable,
             ),
           ),
         );
