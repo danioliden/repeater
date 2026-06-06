@@ -5,28 +5,12 @@ PODS:
   - awesome_notifications_core (0.0.1):
     - Flutter
   - Flutter (1.0.0)
-  - flutter_native_splash (2.4.3):
-    - Flutter
   - IosAwnCore (0.11.0)
-  - package_info_plus (0.4.5):
-    - Flutter
-  - url_launcher_ios (0.0.1):
-    - Flutter
-  - video_player_avfoundation (0.0.1):
-    - Flutter
-    - FlutterMacOS
-  - wakelock_plus (0.0.1):
-    - Flutter
 
 DEPENDENCIES:
   - awesome_notifications (from `.symlinks/plugins/awesome_notifications/ios`)
   - awesome_notifications_core (from `.symlinks/plugins/awesome_notifications_core/ios`)
   - Flutter (from `Flutter`)
-  - flutter_native_splash (from `.symlinks/plugins/flutter_native_splash/ios`)
-  - package_info_plus (from `.symlinks/plugins/package_info_plus/ios`)
-  - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
-  - video_player_avfoundation (from `.symlinks/plugins/video_player_avfoundation/darwin`)
-  - wakelock_plus (from `.symlinks/plugins/wakelock_plus/ios`)
 
 SPEC REPOS:
   trunk:
@@ -39,27 +23,12 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/awesome_notifications_core/ios"
   Flutter:
     :path: Flutter
-  flutter_native_splash:
-    :path: ".symlinks/plugins/flutter_native_splash/ios"
-  package_info_plus:
-    :path: ".symlinks/plugins/package_info_plus/ios"
-  url_launcher_ios:
-    :path: ".symlinks/plugins/url_launcher_ios/ios"
-  video_player_avfoundation:
-    :path: ".symlinks/plugins/video_player_avfoundation/darwin"
-  wakelock_plus:
-    :path: ".symlinks/plugins/wakelock_plus/ios"
 
 SPEC CHECKSUMS:
   awesome_notifications: 8291dd4082db761556cd8bf7977567f5c960c87e
   awesome_notifications_core: 429c28df8746780a474de177e5acde33af87da63
   Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
-  flutter_native_splash: c32d145d68aeda5502d5f543ee38c192065986cf
   IosAwnCore: 32019505f4a4909fa9079ee401b2c82aeeab78a8
-  package_info_plus: af8e2ca6888548050f16fa2f1938db7b5a5df499
-  url_launcher_ios: 7a95fa5b60cc718a708b8f2966718e93db0cef1b
-  video_player_avfoundation: 3453f792138786248960ca029747fcd9f318ef52
-  wakelock_plus: e29112ab3ef0b318e58cfa5c32326458be66b556
 
 PODFILE CHECKSUM: cd4cb4cfe906aa332ab2c4a480b0fcad2e28660c
 
