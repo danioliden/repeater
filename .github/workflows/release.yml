@@ -113,9 +113,9 @@ jobs:
           IPA_URL="https://github.com/$REPO/releases/download/$VERSION/repeater.ipa"
 
           sed -i "s|id=\"version\">[^<]*|id=\"version\">$VERSION|g" index.html
-          sed -i "s|id=\"android-btn\" href=\"[^\"]*\"|id=\"android-btn\" href=\"$APK_URL\"|g" index.html
-          sed -i "s|id=\"ios-btn\" href=\"[^\"]*\"|id=\"ios-btn\" href=\"$IPA_URL\"|g" index.html
-
+          sed -i "s|href=\"[^\"]*\" target=\"_self\" class=\"btn\" id=\"android-btn\"|href=\"$APK_URL\" target=\"_self\" class=\"btn\" id=\"android-btn\"|g" index.html
+          sed -i "s|href=\"[^\"]*\" target=\"_self\" class=\"btn\" id=\"ios-btn\"|href=\"$IPA_URL\" target=\"_self\" class=\"btn\" id=\"ios-btn\"|g" index.html
+          
       - name: Commit & Push
         run: |
           git config user.name "github-actions"
