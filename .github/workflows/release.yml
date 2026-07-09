@@ -21,9 +21,6 @@ jobs:
           flutter-version: '3.44.0'
           channel: stable
 
-      - name: Fix awesome_notifications_core compileSdkVersion
-        run: find $HOME/.pub-cache -path "*/awesome_notifications_core*" -name "build.gradle" -exec sed -i "s/compileSdkVersion = 33/compileSdkVersion = 36/g" {} \;
-
       - run: flutter pub get
       - run: flutter build apk --release
 

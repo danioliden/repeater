@@ -10,6 +10,14 @@ subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
 subprojects {
+    afterEvaluate { project ->
+        if (project.name == "awesome_notifications_core") {
+            android {
+                compileSdk 36
+            }
+        }
+    }
+
     project.evaluationDependsOn(":app")
 }
 
