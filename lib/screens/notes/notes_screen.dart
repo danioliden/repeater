@@ -34,7 +34,7 @@ class _NotesScreenState extends State<NotesScreen> {
     try {
       final response = await http.get(
         Uri.parse(
-            'https://adaniel52.github.io/repeater/api/notes/metadata.json'),
+            'https://danioliden.github.io/repeater/api/notes/metadata.json'),
       );
       if (response.statusCode == 200) {
         final data = json.decode(response.body);

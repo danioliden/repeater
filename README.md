@@ -33,6 +33,6 @@ This app was developed to help students effectively manage their Quranic revisio
 * **Platforms:** Android, iOS, Web
 
 ## 🚀 How to Build
-1. Clone the repo: `git clone https://github.com/adaniel52/repeater`
+1. Clone the repo: `git clone https://github.com/danioliden/repeater`
 2. Install dependencies: `flutter pub get`
 3. Run the app: `flutter run`

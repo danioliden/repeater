@@ -1,0 +1,72 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-apk:
+      - run: mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/repeater.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-apk
+          path: build/app/outputs/flutter-apk/repeater.apk
+
+  build-ipa:
+      - name: Package IPA
+        run: |
+          mkdir -p Payload
+          cp -r build/ios/iphoneos/Runner.app Payload/
+          zip -r repeater.ipa Payload
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-ipa
+          path: repeater.ipa
+
+  release:
+    runs-on: ubuntu-latest
+    needs: [build-apk, build-ipa]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pages
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-apk
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-ipa
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            repeater.apk
+            repeater.ipa
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update index.html
+        run: |
+          VERSION=${{ github.ref_name }}
+          REPO=${{ github.repository }}
+          APK_URL="https://github.com/$REPO/releases/download/$VERSION/YourAppName.apk"
+          IPA_URL="https://github.com/$REPO/releases/download/$VERSION/YourAppName.ipa"
+
+          sed -i "s|id=\"version\">[^<]*|id=\"version\">$VERSION|g" index.html
+          sed -i "s|id=\"apk-link\" href=\"[^\"]*\"|id=\"apk-link\" href=\"$APK_URL\"|g" index.html
+          sed -i "s|id=\"ipa-link\" href=\"[^\"]*\"|id=\"ipa-link\" href=\"$IPA_URL\"|g" index.html
+
+      - name: Commit & Push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add index.html
+          git commit -m "Update to ${{ github.ref_name }}"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

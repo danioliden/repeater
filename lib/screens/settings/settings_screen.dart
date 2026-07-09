@@ -32,10 +32,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
     Colors.pink,
   ];
   final userGuideUrl =
-      Uri.parse('https://adaniel52.github.io/repeater/links/guide/');
+      Uri.parse('https://danioliden.github.io/repeater/links/guide/');
   final sendFeedbackUrl =
-      Uri.parse('https://adaniel52.github.io/repeater/links/feedback/');
-  final websiteUrl = Uri.parse('https://adaniel52.github.io/repeater/');
+      Uri.parse('https://danioliden.github.io/repeater/links/feedback/');
+  final websiteUrl = Uri.parse('https://danioliden.github.io/repeater/');
 
   @override
   void initState() {
